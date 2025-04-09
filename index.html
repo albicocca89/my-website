@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,49 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Alberto Coccarelli</title>
   <style>
+    :root {
+      --primary: #003366;
+      --secondary: #005580;
+      --accent: #00b4d8;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f9f9f9;
+      background: linear-gradient(135deg, #f0f4f8, #ffffff);
       color: #333;
     }
+
     header {
-      background-color: #003366;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
       padding: 2rem;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
     nav {
       text-align: center;
-      margin: 1rem 0;
+      padding: 1rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+
     nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #003366;
+      color: var(--primary);
+      font-weight: bold;
+      position: relative;
     }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
     section {
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 2rem auto;
       padding: 2rem;
-      background-color: white;
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
+
+    section h2 {
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
+      padding-left: 0.5rem;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #eee;
+      padding: 1.5rem;
+      background-color: #e9ecef;
       font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--secondary);
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Dr. Alberto Coccarelli</h1>
-    <p>Computational modelling for Biomedical and Energy Systems</p>
+    <p>Computational Modelling for Biomedical and Energy Systems</p>
   </header>
 
   <nav>
@@ -60,12 +110,22 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am currently a Senior Lecturer within the Mechanical Engineering Department and Zienkiewicz Institute for Modelling, Data and AI at Swansea University, UK. Before this appointment, I received a BEng and MSc in Energy and Nuclear Engineering from Politecnico di Torino, Italy (2012, 2014) and a PhD in Cardiovascular Modeling from the Wales Heart Research Insitute at Cardiff University, UK (2018).</p>
+    <p>I am currently a Senior Lecturer in the Mechanical Engineering Department and the Zienkiewicz Institute for Modelling, Data and AI at Swansea University, UK. Before this appointment, I received a BEng and MSc in Energy and Nuclear Engineering from Politecnico di Torino, Italy (2012, 2014) and a PhD in Cardiovascular Modelling from the Wales Heart Research Insitute at Cardiff University, UK (2018).</p>
   </section>
 
   <section id="research">
     <h2>Research Interests</h2>
-    <p>My research focuses on fluid flow modeling and regulation, with applications in both biomedical systems and mechanical/energy systems. I am particularly interested in the interaction between fluid dynamics and system control in complex environments.</p>
+    <p>My research focuses on the intersection of three main areas:</p>
+    <ul>
+      <li>Fluid flow networks and regulation</li>
+      <li>Vascular mechanobiology</li>
+      <li>Heat and mass transfer</li>
+    </ul>
+    <p>My current research includes:</p>
+    <ul>
+      <li>Quantification of the haemodynamic forces across animal cerebral circulation</li>
+      <li>Assessing the bilateral links between ageing, vascular disease and total cerebrovascular flow resistance</li>
+    </ul>
   </section>
 
   <section id="publications">
